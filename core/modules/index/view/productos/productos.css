@@ -1,0 +1,58 @@
+.card{
+    margin-bottom: 20px;
+    background-color: rgb(252, 252, 252); 
+    border-width: 0px;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(48, 17, 17, 0.26);
+    -webkit-transform: scale(1.04,1.04);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 100ms;
+    -moz-transform: scale(1.04,1.04);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 100ms;
+   
+}
+
+.card-title{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 510;
+    text-transform: uppercase;
+}
+.card-text{
+    color: rgb(43, 119, 206);
+    padding-left: 20px;
+}
+.card-img-top{
+    display: flex;
+    width: 100%;
+    height: 230px;
+}
+
+.card-footer{
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-top-width: 0px;
+    background-color:rgb(252, 252, 252); 
+}
+
+.card-footer .btn{
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid #adb6c7;
+    line-height: 36px;
+    cursor: pointer;
+    text-align: center;
+    transition: all ease-in-out .5s;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}

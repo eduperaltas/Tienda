@@ -1,0 +1,34 @@
+.buscar{
+    background-color: rgb(223, 236, 250);
+    border-width: 0px;
+    width: 300px;
+    height: 40px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+
+}
+
+.btnbuscar{
+    background-color: rgb(223, 236, 250);
+    margin-left:0px ;
+    border-width: 0;
+    height: 40px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.btnbuscar .fas{
+    color: rgb(177, 209, 228) ;
+}
+
+.nav-link:hover{
+    opacity: .5;
+    transition: opacity 1.5s;
+
+}
+
+
+
