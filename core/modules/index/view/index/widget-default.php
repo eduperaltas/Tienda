@@ -75,21 +75,21 @@ $featureds = ProductData::getFeatureds();
                                 $n=0;
                                 ?>
                 <?php if(count($featureds)>0):?>
-                <a href="./">
-                    <div style="background:#333;font-size:25px;color:white;padding:5px;">Productos Destacados</div>
-                </a>
+
+                <div style="background:#333;font-size:25px;color:white;padding:5px;">Productos Destacados</div>
+
                 <br>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
 
-                   
-                            <?php for($j=0;$j<$nproducts;$j++):
+
+                        <?php for($j=0;$j<$nproducts;$j++):
                                 $p=null;
                                 if($n<$nproducts){
                                 $p = $featureds[$n];
                                 }
                                 ?>
-                            <?php if($p!=null):
+                        <?php if($p!=null):
                                 $img = "admin/storage/products/".$p->image;
                                 if($p->image==""){
                                 $img=$img_default;
@@ -97,19 +97,20 @@ $featureds = ProductData::getFeatureds();
                                 ?>
 
 
-                            
 
-                                <div class="swiper-slide">
-                                    <div class="imgBx">
-                                    <a href="index.php?view=producto&product_id=<?php echo $p->id; ?>">   <img src="<?php echo $img; ?>"></a>
-                                    </div>
-                                    <div class="details">
-                                        <a href="index.php?view=producto&product_id=<?php echo $p->id; ?>">
-                                            <h3><?php echo $p->name;?></h3>
-                                        </a>
-                                        <h3><span><?php echo $coin_symbol." ".number_format($p->price,2,".",","); ?></span>
-                                        </h3>
-                                        <?php 
+
+                        <div class="swiper-slide">
+                            <div class="imgBx">
+                                <a href="index.php?view=producto&product_id=<?php echo $p->id; ?>"> <img
+                                        src="<?php echo $img; ?>"></a>
+                            </div>
+                            <div class="details">
+                                <a href="index.php?view=producto&product_id=<?php echo $p->id; ?>">
+                                    <h3><?php echo $p->name;?></h3>
+                                </a>
+                                <h3><span><?php echo $coin_symbol." ".number_format($p->price,2,".",","); ?></span>
+                                </h3>
+                                <?php 
                                             $in_cart=false;
                                             if(isset($_SESSION["cart"])){
                                             foreach ($_SESSION["cart"] as $pc) {
@@ -118,45 +119,44 @@ $featureds = ProductData::getFeatureds();
                                             }
 
                                             ?>
-                                        <center>
+                                <center>
 
-                                            <?php
+                                    <?php
                                             if(!$p->in_existence):?>
 
-                                            <a href="javascript:void()" class="btn btn-labeled btn-warning tip"
-                                                title="No disponible">
-                                                <span><i class="fa fa-shopping-cart"></i></span> No Disponible</a>
-                                            <br>
+                                    <a href="javascript:void()" class="btn btn-labeled btn-warning tip"
+                                        title="No disponible">
+                                        <span><i class="fa fa-shopping-cart"></i></span> No Disponible</a>
+                                    <br>
 
-                                            <?php elseif(!$in_cart):?>
+                                    <?php elseif(!$in_cart):?>
 
-                                            <a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=cat"
-                                                class="btn btn-labeled btn-primary tip"
-                                                title="A&ntilde;adir al carrito">
-                                                <span class=""><i class="fa fa-shopping-cart"></i></span> Comprar</a>
-                                            <br>
-                                            <?php else:?>
-                                            <center><a href="javascript:void()" class="btn btn-labeled btn-success tip"
-                                                    title="Ya esta en el carrito">
-                                                    <span><i class="fa fa-shopping-cart"></i></span> Ya esta
-                                                    agregado</a>
-                                                <br>
-                                                <?php endif; ?>
-                                    </div>
+                                    <a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=cat"
+                                        class="btn btn-labeled btn-primary tip" title="A&ntilde;adir al carrito">
+                                        <span class=""><i class="fa fa-shopping-cart"></i></span> Comprar</a>
+                                    <br>
+                                    <?php else:?>
+                                    <center><a href="javascript:void()" class="btn btn-labeled btn-success tip"
+                                            title="Ya esta en el carrito">
+                                            <span><i class="fa fa-shopping-cart"></i></span> Ya esta
+                                            agregado</a>
+                                        <br>
+                                        <?php endif; ?>
+                            </div>
 
-                                    </center>
-                                    </center>
-                                </div>
-                            
-                            <?php endif; ?>
-                            
-                               
-                            <?php $n++; endfor; ?>
-                            
+                            </center>
+                            </center>
+                        </div>
+
+                        <?php endif; ?>
+
+
+                        <?php $n++; endfor; ?>
+
                     </div>
                 </div>
-                 <!-- Add Pagination -->
-                 <div class="swiper-pagination"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
                 <script type="text/javascript" src="core/modules/index/view/swiper.min.js"></script>
 
                 <script>
@@ -165,12 +165,17 @@ $featureds = ProductData::getFeatureds();
                     grabCursor: true,
                     centeredSlides: true,
                     slidesPerView: 'auto',
+                    loop: true,
                     coverflowEffect: {
                         rotate: 0,
                         stretch: 0,
                         depth: 100,
                         modifier: 1,
                         slideShadows: false,
+                    },
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
                     },
                     pagination: {
                         el: '.swiper-pagination',

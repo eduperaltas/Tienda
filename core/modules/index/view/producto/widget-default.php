@@ -35,7 +35,7 @@ $cats = CategoryData::getPublics();
                 </div>
             </div>
             <div class="col-md-9">
-                <div style="background:#3498db;font-size:25px;color:white;padding:5px;"><?php echo $p->name; ?></div>
+                <div style="background:#3498db;font-size:35px;color:white;padding:5px;font-weight:600;"><?php echo $p->name; ?></div>
                 <br>
 
 
@@ -74,7 +74,7 @@ if($p->image==""){
 
 
 
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="padding-top:60px">
                         <h1 class="text-primary"><?php echo $coin_symbol; ?>
                             <?php echo number_format($p->price,2,".",","); ?></h1>
                         <?php 
@@ -132,8 +132,8 @@ if(isset($_SESSION["cart"])){
 
                 
                 // thumbnail nav options
-                "navWidth": 70,
-                "navHeight": 70,
+                "navWidth": 100,
+                "navHeight": 100,
                 "navItemNum": 5,
                 "navItemMargin": 7,
                 "navBorder": 0,

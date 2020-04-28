@@ -130,13 +130,34 @@ $cats = CategoryData::getPublics();
 <div class="row">
 <div class="col-md-12">
 <hr>
-<p><b>Katana Lite</b> &copy; 2019</p>
+<ul class="list-inline">
+<li class="list-inline-item"> <i class="fas fa-hand-holding-usd fa-3x"style="color:rgb(236, 236, 236); padding-left: 50px;"> </i></li>
+<li class="list-inline-item"> <i class="fab fa-cc-visa fa-3x"style="color:rgb(236, 236, 236); padding-left: 120px;"> </i></li>
+<li class="list-inline-item"> <i class="fab fa-cc-mastercard fa-3x"style="color:rgb(236, 236, 236); padding-left: 120px;"> </i></li>
+<li class="list-inline-item"> <i class="fab fa-cc-amex fa-3x"style="color:rgb(236, 236, 236); padding-left: 120px;"> </i></li>
+<li class="list-inline-item"> <i class="fab fa-cc-diners-club fa-3x"style="color:rgb(236, 236, 236); padding-left: 120px;"> </i></li>
+<li class="list-inline-item"> <i class="fas fa-donate fa-3x"style="color:rgb(236, 236, 236); padding-left: 120px;"> </i></li>
+</ul>
+
+<ul class="list-inline">
+<li class="list-inline-item">   <p class="text-muted"> Pago contra entrega</p></li>
+<li class="list-inline-item"><p class="text-muted" style="color:#ececec; padding-left: 87px;"> Visa</p></li>
+<li class="list-inline-item"><p class="text-muted" style="color:rgb(236, 236, 236); padding-left: 120px;"> Master Card</p></li>
+<li class="list-inline-item"><p class="text-muted" style="color:rgb(236, 236, 236); padding-left: 70px;"> American Express</p></li>
+<li class="list-inline-item"><p class="text-muted" style="color:rgb(236, 236, 236); padding-left: 74px;"> Diners Club</p></li>
+<li class="list-inline-item"><p class="text-muted" style="color:rgb(236, 236, 236); padding-left: 70px;"> Depósito Bancario</p></li>
+
+</ul>
+
+
+<hr>
+<p><b>Store Lite</b> &copy; 2019</p>
 <ul class="list-inline">
 <li class="list-inline-item"><p class="text-muted"> <a href="http://evilnapsis.com/">Evilnapsis</a></p></li>
 <li class="list-inline-item"><p class="text-muted"> <a href="http://evilnapsis.com/support/katana-documentation/">Documentacion</a></p></li>
 </ul>
-</div>
-</div>
+
+
 </div>
 </section>
 <br>
