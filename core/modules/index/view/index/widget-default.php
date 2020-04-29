@@ -156,7 +156,7 @@ $featureds = ProductData::getFeatureds();
                     </div>
                 </div>
                 <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
+                
                 <script type="text/javascript" src="core/modules/index/view/swiper.min.js"></script>
 
                 <script>

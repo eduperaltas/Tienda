@@ -15,6 +15,7 @@ $products = ProductData::getOffers();
 $products = ProductData::getLike($_GET["q"]);
 
 }
+
 $coin = ConfigurationData::getByPreffix("general_coin")->val;
 $img_default = ConfigurationData::getByPreffix("general_img_default")->val;
 
@@ -33,20 +34,33 @@ $img_default = ConfigurationData::getByPreffix("general_img_default")->val;
 <?php
 
 $nproducts = count($products);
+$card_x_pagina = 12; /* numero de cosas por pagina*/ 
+$paginas = ceil($nproducts/$card_x_pagina); /*paginas*/ 
+
+
 $filas = $nproducts/3;
 $extra = $nproducts%3;
 if($filas>1&& $extra>0){ $filas++; }
 $n=0;
 ?>
+
 <?php if($nproducts>0):?>
+
 <?php for($i=0;$i<$filas;$i++):?>
+
   <div class="row">
-<?php for($j=0;$j<3;$j++):
+
+
+
+<?php 
+$n =($_GET['pagina']-1)*$card_x_pagina;
+for($i=0;$i<$card_x_pagina;$i++): //numero de cards por fila
 $p=null;
-if($n<$nproducts){
+if($n<$nproducts){   //numero de cards pagina
 $p = $products[$n];
 }
 ?>
+
 <?php if($p!=null):
 $img = "admin/storage/products/".$p->image;
 if($p->image==""){
@@ -55,6 +69,7 @@ if($p->image==""){
 
 ?>
 
+<!-- Cartas de Productos-->
 <div class="col-md-4">
     
     <div class="card">
@@ -102,8 +117,6 @@ if(isset($_SESSION["cart"])){
 <?php endif; ?>
 <?php $n++; endfor; ?>
 
-
-
   </div>
 <?php endfor; ?>
 <?php else:?>
@@ -112,6 +125,34 @@ if(isset($_SESSION["cart"])){
   <p>No hay productos por mostrar</p>
   </div>
 <?php endif;?>
+
+
+
+<!-- BARRA Y PAGINACION-->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item <?php echo $_GET['pagina']<=1 ?'disabled': '' ?>"">
+      <a class="page-link" href="index.php?view=productos&cat=<?php echo$_GET['cat']?>&pagina=<?php echo $_GET['pagina']-1 ?>" tabindex="-1" aria-disabled="true">Anterior</a>
+    </li>
+
+    <?php for ($i=0; $i < $paginas; $i++): ?>
+
+
+    <li class="page-item <?php echo $_GET['pagina']==$i+1 ? 'active' : '' ?>">
+    <a class="page-link" href="index.php?view=productos&cat=<?php echo$_GET['cat']?>&pagina=<?php echo $i+1?>">
+    <?php echo $i+1?>
+    </a>
+    </li>
+    
+    <?php endfor?>
+    
+
+    <li class="page-item <?php echo $_GET['pagina']>=$paginas ?'disabled': '' ?>">
+      <a class="page-link" href="index.php?view=productos&cat=<?php echo$_GET['cat']?>&pagina=<?php echo $_GET['pagina']+1 ?>">Siguiente</a>
+    </li>
+  </ul>
+</nav>
+
 
 
   </div>

@@ -80,7 +80,7 @@ class ProductData {
 	}
 
 	public static function getFeatureds(){
-		$sql = "select * from ".self::$tablename." where is_featured=1 and is_public=1 order by created_at desc limit 6";
+		$sql = "select * from ".self::$tablename." where is_featured=1 and is_public=1 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductData());
 	}
