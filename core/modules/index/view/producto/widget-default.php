@@ -27,7 +27,7 @@ $cats = CategoryData::getPublics();
                     <div class="list-group">
                         <?php foreach($cats as $cat):?>
 
-                        <a href="index.php?view=productos&cat=<?php echo $cat->short_name; ?>"
+                        <a href="index.php?view=productos&cat=<?php echo $cat->short_name; ?>&pagina=1"
                             class="list-group-item"><i class="fa fa-chevron-right"></i> <?php echo $cat->name; ?></a>
                         <?php endforeach; ?>
                     </div>
@@ -42,9 +42,11 @@ $cats = CategoryData::getPublics();
 
                 <?php if($p!=null):
 $img = "admin/storage/products/".$p->image;
-if($p->image==""){
-  $img=$img_default;
-}
+$img2 = "admin/storage/products/".$p->Image2;
+$img3 = "admin/storage/products/".$p->Image3;
+$img4 = "admin/storage/products/".$p->Image4;
+
+
 ?>
                 <div class="row">
                     <div class="col-md-8">
@@ -53,10 +55,12 @@ if($p->image==""){
                             <!-- Images -->
                             <div class="exzoom_img_box">
                                 <ul class='exzoom_img_ul'>
+
                                     <li><img src="<?php echo $img; ?>"> </li>
-                                    <li><img src="admin/storage/slides/00vision_1.jpg"/></li>
-                                    <li><img src="admin/storage/slides/descargar.jpg" /></li>
-                                    <li><img src="admin/storage/slides/descargar_1.jpg" /></li>
+                                    <li><img src="<?php echo $img2; ?>"/></li> <!-- Agregar otras imagenes de la BD-->
+                                    <li><img src="<?php echo $img3; ?>"/></li> <!-- Agregar otras imagenes de la BD-->
+                                    <li><img src="<?php echo $img4; ?>"/></li> <!-- Agregar otras imagenes de la BD-->
+                                    
                                 </ul>
                             </div>
                             <!-- <a href="https://www.jqueryscript.net/tags.php?/Thumbnail/">Thumbnail</a> Nav-->

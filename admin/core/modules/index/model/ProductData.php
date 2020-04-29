@@ -7,6 +7,9 @@ class ProductData {
 		$this->title = "";
 		$this->content = "";
 		$this->image = "";
+		$this->Image2 = "";
+		$this->Image3 = "";
+		$this->Image4 = "";
 		$this->link = "";
 		$this->category_id = "";
 		$this->is_public = "0";
@@ -16,8 +19,8 @@ class ProductData {
 	public function getUnit(){ return UnitData::getById($this->unit_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (short_name,code,name,description,image,price,link,category_id,unit_id,is_public,in_existence,is_featured,created_at) ";
-		$sql .= "value (\"$this->short_name\",\"$this->code\",\"$this->name\",\"$this->description\",\"$this->image\",\"$this->price\",\"$this->link\",$this->category_id,$this->unit_id,$this->is_public,$this->in_existence,$this->is_featured,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (short_name,code,name,description,image,Image2,Image3,Image4,price,link,category_id,unit_id,is_public,in_existence,is_featured,created_at) ";
+		$sql .= "value (\"$this->short_name\",\"$this->code\",\"$this->name\",\"$this->description\",\"$this->image\",\"$this->Image2\",\"$this->Image3\",\"$this->Image4\",\"$this->price\",\"$this->link\",$this->category_id,$this->unit_id,$this->is_public,$this->in_existence,$this->is_featured,$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -26,6 +29,8 @@ class ProductData {
 		Executor::doit($sql);
 	}
 	public function del(){
+		$sql2 = "delete from product_view where id=$this->id";
+		Executor::doit($sql2);
 		$sql = "delete from ".self::$tablename." where id=$this->id";
 		Executor::doit($sql);
 	}
@@ -38,6 +43,18 @@ class ProductData {
 
 	public function update_image(){
 		$sql = "update ".self::$tablename." set image=\"$this->image\" where id=$this->id";
+		Executor::doit($sql);
+	}
+	public function update_Image2(){
+		$sql = "update ".self::$tablename." set Image2=\"$this->Image2\" where id=$this->id";
+		Executor::doit($sql);
+	}
+	public function update_Image3(){
+		$sql = "update ".self::$tablename." set Image3=\"$this->Image3\" where id=$this->id";
+		Executor::doit($sql);
+	}
+	public function update_Image4(){
+		$sql = "update ".self::$tablename." set Image4=\"$this->Image4\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

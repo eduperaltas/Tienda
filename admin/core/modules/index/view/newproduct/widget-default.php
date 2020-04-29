@@ -46,12 +46,36 @@ $coin = ConfigurationData::getByPreffix("general_coin")->val;
   <input type="text" class="form-control" placeholder="Precio" required name="price">
 </div>    </div>
   </div>
+
+<!-- Agrega Imagenes-->
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Imagen</label>
     <div class="col-lg-10">
       <input type="file" name="image">
     </div>
   </div>
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Imagen 2</label>
+    <div class="col-lg-10">
+      <input type="file" name="Image2">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Imagen 3</label>
+    <div class="col-lg-10">
+      <input type="file" name="Image3">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Imagen 4</label>
+    <div class="col-lg-10">
+      <input type="file" name="Image4">
+    </div>
+  </div>
+
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-2">
