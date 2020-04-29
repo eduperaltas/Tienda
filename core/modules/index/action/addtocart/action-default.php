@@ -21,7 +21,7 @@ Core::redir("index.php?view=producto&product_id=".$_GET["product_id"]);
 }else if($_GET["href"]=="cat"){
 	$p =  ProductData::getById($_GET["product_id"]);
 	$cat = CategoryData::getById($p->category_id);
-	Core::redir("index.php?view=productos&cat=".$cat->short_name);
+	Core::redir("index.php?view=productos&cat=".$cat->short_name."&pagina=".$_GET['pagina']);
 }
 
 

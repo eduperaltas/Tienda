@@ -95,13 +95,13 @@ if(isset($_SESSION["cart"])){
 <?php
  if(!$p->in_existence):?>
 
-<a href="javascript:void()" class="btn btn-labeled  btn-warning tip" title="No disponible">
+<a href="javascript:void()" class="btn btn-labeled  btn-warning tip" title="No disponible"> <!-- aca pregunto si es que esa en existencia de eso depende la posibilidad de compra -->
                 <span><i class="fa fa-shopping-cart"></i></span> No Disponible</a>
 <br>
 
 <?php elseif(!$in_cart):?>
 
-<a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=cat" class="btn btn-labeled  btn-primary tip" title="A&ntilde;adir al carrito">
+<a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=cat&pagina=<?php echo $_GET['pagina']?>" class="btn btn-labeled  btn-primary tip" title="A&ntilde;adir al carrito">
                 <span ><i class="fa fa-shopping-cart"></i></span> Comprar</a>
 <br>
 <?php else:?>
@@ -131,7 +131,7 @@ if(isset($_SESSION["cart"])){
 <!-- BARRA Y PAGINACION-->
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
-    <li class="page-item <?php echo $_GET['pagina']<=1 ?'disabled': '' ?>"">
+    <li class="page-item <?php echo $_GET['pagina']<=1 ?'disabled': '' ?>">
       <a class="page-link" href="index.php?view=productos&cat=<?php echo$_GET['cat']?>&pagina=<?php echo $_GET['pagina']-1 ?>" tabindex="-1" aria-disabled="true">Anterior</a>
     </li>
 

@@ -105,7 +105,7 @@ $featureds = ProductData::getFeatureds();
                                         src="<?php echo $img; ?>"></a>
                             </div>
                             <div class="details">
-                                <a href="index.php?view=producto&product_id=<?php echo $p->id; ?>">
+                                <a style="text-decoration:none" href="index.php?view=producto&product_id=<?php echo $p->id; ?>">
                                     <h3><?php echo $p->name;?></h3>
                                 </a>
                                 <h3><span><?php echo $coin_symbol." ".number_format($p->price,2,".",","); ?></span>
@@ -121,27 +121,6 @@ $featureds = ProductData::getFeatureds();
                                             ?>
                                 <center>
 
-                                    <?php
-                                            if(!$p->in_existence):?>
-
-                                    <a href="javascript:void()" class="btn btn-labeled btn-warning tip"
-                                        title="No disponible">
-                                        <span><i class="fa fa-shopping-cart"></i></span> No Disponible</a>
-                                    <br>
-
-                                    <?php elseif(!$in_cart):?>
-
-                                    <a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=cat"
-                                        class="btn btn-labeled btn-primary tip" title="A&ntilde;adir al carrito">
-                                        <span class=""><i class="fa fa-shopping-cart"></i></span> Comprar</a>
-                                    <br>
-                                    <?php else:?>
-                                    <center><a href="javascript:void()" class="btn btn-labeled btn-success tip"
-                                            title="Ya esta en el carrito">
-                                            <span><i class="fa fa-shopping-cart"></i></span> Ya esta
-                                            agregado</a>
-                                        <br>
-                                        <?php endif; ?>
                             </div>
 
                             </center>

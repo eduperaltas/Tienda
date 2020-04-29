@@ -109,6 +109,7 @@ if(isset($_SESSION["cart"])){
                         <?php else:?>
                         <p class="text-warning">Producto no disponible</p>
                         <?php endif; ?>
+                            
                     </div>
                 </div>
                 <br><br>
@@ -116,6 +117,7 @@ if(isset($_SESSION["cart"])){
                     <div class="col-md-12">
                         <hr>
                         <h4>Codigo: <?php echo $p->code; ?></h4>
+                        <h4>Descripcion:</h4>
                         <p><?php echo $p->description; ?></p>
                     </div>
                 </div>

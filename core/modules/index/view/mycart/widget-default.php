@@ -22,20 +22,22 @@ $ivatxt = ConfigurationData::getByPreffix("general_iva_txt")->val;
 		<h2>Mi Carrito</h2>
 <table class="table table-bordered">
 <thead>
-	<th>Codigo</th>
-	<th>Producto</th>
-	<th>Cantidad</th>
-	<th>Precio Unitario</th>
-	<th>Total</th>
-	<th></th>
+	<th><Center>Codigo</th>
+	<th><Center>Imagen</th>
+	<th><Center>Producto</th>
+	<th><Center>Cantidad</th>
+	<th><Center>Precio Unitario</th>
+	<th><Center>Total</th>
+	<th><Center>Eliminar</th>
 </thead>
 <?php 
 foreach($_SESSION["cart"] as $s):?>
 <?php $p = ProductData::getById($s["product_id"]); ?>
 <tr>
-<td><?php echo $p->code; ?></td>
-<td><?php echo $p->name; ?></td>
-<td style="width:100px;">
+<td style="padding-top:35px" style="padding-top:35px"> <center> <?php echo $p->code; ?></center></td>
+<td><center><?php $img = "admin/storage/products/".$p->image; ?> <img src="<?php echo $img; ?>" style=" width: 80px;height: 80px;"   alt=""></center></td> 
+<td style="padding-top:35px"><center><?php echo $p->name; ?></center></td>
+<td  style="padding-top:35px; width:100px;">
 <form id="p-<?=$s["product_id"];?>">
 <input type="hidden" name="p_id" value="<?=$s["product_id"];?>">
 <input type="number" name="q" id="num-<?=$s["product_id"];?>" value="<?php echo $s["q"]; ?>" class="form-control">
@@ -49,9 +51,9 @@ foreach($_SESSION["cart"] as $s):?>
 	});
 </script>
 </td>
-<td><h4><?php echo $coin_symbol; ?> <?php echo $p->price; ?></h4> </td>
-<td><h4><?php echo $coin_symbol; ?> <?php echo $p->price*$s["q"]; ?></h4> </td>
-<td style="width:30px;"><a href="index.php?action=deletefromcart&product_id=<?php echo $p->id; ?>&href=cart" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+<td style="padding-top:35px"><center><h4><?php echo $coin_symbol; ?> <?php echo $p->price; ?></h4> </td>
+<td style="padding-top:35px"><center><h4><?php echo $coin_symbol; ?> <?php echo $p->price*$s["q"]; ?></h4> </td>
+<td style="padding-top:35px" style="width:30px;"><center><a href="index.php?action=deletefromcart&product_id=<?php echo $p->id; ?>&href=cart" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
 <?php
 $total += $s["q"]*$p->price;
  endforeach; ?>
@@ -59,8 +61,9 @@ $total += $s["q"]*$p->price;
 </table>
 
 
+
 <div class="row">
-<div class="col-md-5">
+<div class="col-md-7">
 
 </div>
 <div class="col-md-5 col-md-offset-2">

@@ -47,9 +47,13 @@
         text-align: center;
         line-height: 20px;
     }
-    .swiper-slide .details h3 span{
+    .swiper-slide .details .h3 span{
         font-size: 16px;
         color: darkred;
+    }
+
+    .swiper-slide .details .a {
+        text-decoration: none;
     }
 
     .swiper-container .swiper-pagination{
