@@ -35,12 +35,14 @@ foreach($_SESSION["cart"] as $s):?>
 <?php $p = ProductData::getById($s["product_id"]); ?>
 <tr>
 <td style="padding-top:35px" style="padding-top:35px"> <center> <?php echo $p->code; ?></center></td>
-<td><center><?php $img = "admin/storage/products/".$p->image; ?> <img src="<?php echo $img; ?>" style=" width: 80px;height: 80px;"   alt=""></center></td> 
+<td><center> <a href="index.php?view=producto&product_id=<?php echo $p->id; ?>"> <?php $img = "admin/storage/products/".$p->image; ?> <img src="<?php echo $img; ?>" style=" width: 80px;height: 80px;"   alt=""></a> </center></td> 
 <td style="padding-top:35px"><center><?php echo $p->name; ?></center></td>
 <td  style="padding-top:35px; width:100px;">
 <form id="p-<?=$s["product_id"];?>">
 <input type="hidden" name="p_id" value="<?=$s["product_id"];?>">
-<input type="number" name="q" id="num-<?=$s["product_id"];?>" value="<?php echo $s["q"]; ?>" class="form-control">
+
+<input type="number" name="q" id="num-<?=$s["product_id"];?>" value="<?php echo $s["q"]; ?>" class="form-control" min="1" max="<?php echo $p->Stock; ?>">
+
 </form>
 <script>
 	$("#num-<?=$s['product_id'];?>").change(function(){

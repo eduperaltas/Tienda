@@ -19,8 +19,8 @@ $ivatxt = ConfigurationData::getByPreffix("general_iva_txt")->val;
 	<thead>
 		<th></th>
 		<th>Codigo</th>
+		<th>Nombre</th>
 		<th>Total</th>
-		<th>Estado</th>
 	</thead>
 	<?php foreach($products as $p):
 $px = $p->getProduct();

@@ -90,7 +90,7 @@ if(isset($_SESSION["cart"])){
   }
 
   ?>
-                        <?php if(!$p->in_existence):?>
+                        <?php if(!$p->in_existence || $p->Stock<=0):?>
                         <a href="javascript:void()" class="btn btn-labeled btn-warning tip" title="No Disponible">
                             <span><i class="fa fa-shopping-cart"></i></span> No Disponible</a>
 
@@ -104,12 +104,13 @@ if(isset($_SESSION["cart"])){
                             <span><i class="fa fa-shopping-cart"></i></span> Ya esta agregado</a>
 
                         <?php endif; ?>
-                        <?php if($p->in_existence):?>
+                        <?php if($p->in_existence && $p->Stock>0):?>
                         <p class="text-success">Producto en Existencia</p>
+                        <p class="text-success"> Stock: <?php echo $p->Stock; ?></p>
                         <?php else:?>
                         <p class="text-warning">Producto no disponible</p>
                         <?php endif; ?>
-                            
+
                     </div>
                 </div>
                 <br><br>

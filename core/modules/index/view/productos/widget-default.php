@@ -93,7 +93,7 @@ if(isset($_SESSION["cart"])){
 
                 </center>
 <?php
- if(!$p->in_existence):?>
+ if(!$p->in_existence || $p->Stock<=0):?>
 
 <a href="javascript:void()" class="btn btn-labeled  btn-warning tip" title="No disponible"> <!-- aca pregunto si es que esa en existencia de eso depende la posibilidad de compra -->
                 <span><i class="fa fa-shopping-cart"></i></span> No Disponible</a>
