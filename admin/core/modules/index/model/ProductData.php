@@ -41,6 +41,11 @@ class ProductData {
 		$sql = "update ".self::$tablename." set code=\"$this->code\",name=\"$this->name\",description=\"$this->description\",link=\"$this->link\",price=\"$this->price\",in_existence=\"$this->in_existence\",Stock=\"$this->Stock\",is_public=\"$this->is_public\",is_featured=\"$this->is_featured\",unit_id=\"$this->unit_id\",category_id=\"$this->category_id\" where id=$this->id";
 		Executor::doit($sql);
 	}
+// resta de stock
+	public function updateStock($newstock, $id){
+		$sql = "update ".self::$tablename." set Stock=$newstock where id=$id";
+		Executor::doit($sql);
+	}
 
 	public function update_image(){
 		$sql = "update ".self::$tablename." set image=\"$this->image\" where id=$this->id";

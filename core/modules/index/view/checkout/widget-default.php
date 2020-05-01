@@ -19,7 +19,7 @@ $ivatxt = ConfigurationData::getByPreffix("general_iva_txt")->val;
 	<div class="row">
 
 		<div class="col-md-12">
-			<?php if(isset($_SESSION["cart"]) && count($_SESSION["cart"]>0)):?>
+			<?php if(isset($_SESSION["cart"]) && count($_SESSION["cart"])>0):?>
 		<h2>Confirmacion de compra</h2>
 		<h4>Metodo de pago: <b><?php echo $pm->name; ?></b></h4>
 <table class="table table-bordered">

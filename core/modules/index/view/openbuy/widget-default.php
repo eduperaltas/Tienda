@@ -11,6 +11,7 @@ $ivatxt = ConfigurationData::getByPreffix("general_iva_txt")->val;
 $buy = BuyData::getByCode($_GET["code"]);
 $products = BuyProductData::getAllByBuyId($buy->id);
 
+
 ?>
 <div class="container">
 <div class="row">
@@ -29,10 +30,14 @@ $products = BuyProductData::getAllByBuyId($buy->id);
 	<div class="col-md-12">
 <?php if($buy->status_id==1):?>
 <p class="alert alert-warning">Operacion Pendiente</p>
-<?php elseif($buy->status_id >= 2 && $buy->status_id <=4 ):?>
+<?php elseif($buy->status_id == 2 || $buy->status_id ==4 ):?>
 <p class="alert alert-info"><?php echo StatusData::getById($buy->status_id)->name; ?></p>
-<?php elseif($buy->status_id==5):?>
+
+<?php elseif($buy->status_id==3):?>
 <p class="alert alert-danger">Operacion Cancelada</p>
+<?php?>
+<?php elseif($buy->status_id==5):?>
+<p class="alert alert-success">Operacion Finalizada</p>
 <?php endif; ?>
 	<h2> Compra #<?php echo $buy->id; ?></h2>
 <?php if(count($products)>0):?>
@@ -42,6 +47,7 @@ $products = BuyProductData::getAllByBuyId($buy->id);
 		<th>Cantidad</th>
 		<th>Unidad</th>
 		<th>Codigo</th>
+		<th>Nombre</th>
 		<th>Total</th>
 		<th>Estado</th>
 	</thead>
@@ -55,9 +61,13 @@ $px = $p->getProduct();
 		<td><?php echo $px->code; ?></td>
 		<td><?php echo $px->name; ?></td>
 		<td><?php echo $coin; ?> <?php echo number_format($px->price*$p->q,2,".",","); ?></td>
+		<td><?php echo StatusData::getById($buy->status_id)->name; ?></td>
 	</tr>
 
 	<?php endforeach; ?>
+
+
+
 </table>
 
 

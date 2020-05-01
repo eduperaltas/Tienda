@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="res/lib/fontawesome/css/all.min.css">
     <script src="res/lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="core/modules/index/view/swiper.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 
 </head>
 
@@ -109,10 +110,11 @@ $cats = CategoryData::getPublics();
                 <form class="form-inline my-2 my-lg-0">
                     <input type="hidden" name="view" value="productos">
                     <input type="hidden" name="act" value="search">
-
                     <input class="buscar " name="q" type="search" placeholder="   Buscar ..." aria-label="Buscar ...">
+                    <input type="hidden" name="pagina" value="1">
                     <button class="btnbuscar" type="submit"> <i class="fas fa-search"></i></button>
-                    &nbsp;
+           
+
                     <a href="index.php?view=mycart" class="btn  btn-secondary my-2 my-sm-0"><i
                             class="fa fa-shopping-cart"></i>
                         <?php if(isset($_SESSION["cart"])):?>

@@ -21,8 +21,8 @@ Viewer::addView($p->id,"product_id","product_view");
 
 
                     <?php
-$cats = CategoryData::getPublics();
-?>
+                        $cats = CategoryData::getPublics();
+                        ?>
                     <?php if(count($cats)>0):?>
                     <div class="list-group">
                         <?php foreach($cats as $cat):?>
@@ -41,13 +41,13 @@ $cats = CategoryData::getPublics();
 
 
                 <?php if($p!=null):
-$img = "admin/storage/products/".$p->image;
-$img2 = "admin/storage/products/".$p->Image2;
-$img3 = "admin/storage/products/".$p->Image3;
-$img4 = "admin/storage/products/".$p->Image4;
+                    $img = "admin/storage/products/".$p->image;
+                    $img2 = "admin/storage/products/".$p->Image2;
+                    $img3 = "admin/storage/products/".$p->Image3;
+                    $img4 = "admin/storage/products/".$p->Image4;
 
 
-?>
+                    ?>
                 <div class="row">
                     <div class="col-md-8">
 
@@ -99,15 +99,16 @@ if(isset($_SESSION["cart"])){
                             class="btn btn-labeled btn-primary tip" title="A&ntilde;adir al carrito">
                             <span><i class="fa fa-shopping-cart"></i></span> Comprar</a>
                         <?php else:?>
-                        <a href="index.php?action=addtocart&product_id=<?php echo $p->id; ?>&href=product"
+                        <a href="javascript:void()"
                             class="btn btn-labeled btn-success tip" title="Ya esta en el carrito">
                             <span><i class="fa fa-shopping-cart"></i></span> Ya esta agregado</a>
 
                         <?php endif; ?>
-                        <?php if($p->in_existence && $p->Stock>0):?>
+                        <?php if($p->in_existence && $p->Stock>0):?>    
                         <p class="text-success">Producto en Existencia</p>
-                        <p class="text-success"> Stock: <?php echo $p->Stock; ?></p>
-                        <?php else:?>
+                        <div class="badge badge-success"> 
+                          Stock: <?php echo $p->Stock; ?>
+                        <?php else:?> </div>   
                         <p class="text-warning">Producto no disponible</p>
                         <?php endif; ?>
 
@@ -153,6 +154,7 @@ if(isset($_SESSION["cart"])){
 
         });
         </script>
+        
 
     </div>
 </section>

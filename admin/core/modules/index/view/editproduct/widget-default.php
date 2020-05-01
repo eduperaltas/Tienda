@@ -65,7 +65,7 @@ $coin = ConfigurationData::getByPreffix("general_coin")->val;
                         <div class="col-lg-5">
                             <div class="input-group" style="width:200px">
                                 <span class="input-group-addon">#</span>
-                                <input type="number" class="form-control" placeholder="Stock" required name="Stock">
+                                <input type="number" class="form-control" placeholder="Stock"  value="<?php echo $product->Stock; ?>" required name="Stock">
                             </div>
                         </div>
                     </div>

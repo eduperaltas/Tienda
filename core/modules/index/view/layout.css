@@ -17,11 +17,12 @@
     height: 40px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
-
+    margin-right: 15px;
 }
 
 .btnbuscar .fas{
     color: rgb(177, 209, 228) ;
+
 }
 
 .nav-link:hover{
