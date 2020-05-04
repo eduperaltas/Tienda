@@ -10,6 +10,7 @@ class ProductData {
 		$this->Image2 = "";
 		$this->Image3 = "";
 		$this->Image4 = "";
+		$this->video = "";
 		$this->link = "";
 		$this->category_id = "";
 		$this->is_public = "0";
@@ -20,8 +21,8 @@ class ProductData {
 	public function getUnit(){ return UnitData::getById($this->unit_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (short_name,code,name,description,image,Image2,Image3,Image4,price,link,category_id,unit_id,is_public,in_existence,Stock,is_featured,created_at) ";
-		$sql .= "value (\"$this->short_name\",\"$this->code\",\"$this->name\",\"$this->description\",\"$this->image\",\"$this->Image2\",\"$this->Image3\",\"$this->Image4\",\"$this->price\",\"$this->link\",$this->category_id,$this->unit_id,$this->is_public,$this->in_existence,$this->Stock,$this->is_featured,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (short_name,code,name,description,image,Image2,Image3,Image4,video,price,link,category_id,unit_id,is_public,in_existence,Stock,is_featured,created_at) ";
+		$sql .= "value (\"$this->short_name\",\"$this->code\",\"$this->name\",\"$this->description\",\"$this->image\",\"$this->Image2\",\"$this->Image3\",\"$this->Image4\",\"$this->video\",\"$this->price\",\"$this->link\",$this->category_id,$this->unit_id,$this->is_public,$this->in_existence,$this->Stock,$this->is_featured,$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -38,7 +39,7 @@ class ProductData {
 
 // partiendo de que ya tenemos creado un objecto ProductData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set code=\"$this->code\",name=\"$this->name\",description=\"$this->description\",link=\"$this->link\",price=\"$this->price\",in_existence=\"$this->in_existence\",Stock=\"$this->Stock\",is_public=\"$this->is_public\",is_featured=\"$this->is_featured\",unit_id=\"$this->unit_id\",category_id=\"$this->category_id\" where id=$this->id";
+		$sql = "update ".self::$tablename." set code=\"$this->code\",name=\"$this->name\",description=\"$this->description\",video=\"$this->video\",link=\"$this->link\",price=\"$this->price\",in_existence=\"$this->in_existence\",Stock=\"$this->Stock\",is_public=\"$this->is_public\",is_featured=\"$this->is_featured\",unit_id=\"$this->unit_id\",category_id=\"$this->category_id\" where id=$this->id";
 		Executor::doit($sql);
 	}
 // resta de stock
@@ -78,6 +79,11 @@ class ProductData {
 		return Model::many($query[0],new ProductData());
 	}
 
+
+
+
+
+	
 	public static function getPublicsByCategoryId($id){
 		$sql = "select * from ".self::$tablename." where category_id=$id and is_public=1 order by created_at desc";
 		$query = Executor::doit($sql);

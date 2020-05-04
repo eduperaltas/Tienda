@@ -21,7 +21,7 @@
       <input type="text" required name="lastname" class="form-control" id="inputEmail1" placeholder="Apellido">
     </div>
   </div>
-  <!--
+
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-12 control-label">Telefono</label>
     <div class="col-lg-12">
@@ -34,10 +34,11 @@
       <input type="text" name="address" class="form-control" id="inputEmail1" placeholder="Direccion">
     </div>
   </div>
--->
-<input type="hidden" name="phone">
-<input type="hidden" name="address">
+
+
+
   <div class="form-group">
+
     <label for="inputEmail1" class="col-lg-12 control-label">*Correo Electronico</label>
     <div class="col-lg-12">
       <input type="email" name="email" required class="form-control" id="inputEmail1" placeholder="Correo Electronico">

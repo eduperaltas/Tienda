@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="index.php?view=newproduct" class="pull-right btn-sm btn btn-default">Agregar Producto</a>
+
                 <!-- Button trigger modal -->
 
 

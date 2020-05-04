@@ -92,6 +92,16 @@ $coin = ConfigurationData::getByPreffix("general_coin")->val;
 
 
                     <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 control-label">Video</label>
+                        <div class="col-lg-6">
+                        <div class="input-group">
+                                <span class="input-group-addon">https://www.youtube.com/watch?v=</span>
+                                <input type="text" class="form-control" placeholder="" required name="video">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-2">
                             <div class="checkbox">
                                 <label>

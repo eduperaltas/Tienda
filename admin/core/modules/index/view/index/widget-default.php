@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-md-12">
-<h1>BIENVENIDO A KATANA</h1>
-<p>Katana es un sistema de tienda en linea.</p>
+<h1>BIENVENIDO A STORE</h1>
+<p>Store es un sistema de tienda en linea.</p>
 
 <?php
 $status = StatusData::getAll();

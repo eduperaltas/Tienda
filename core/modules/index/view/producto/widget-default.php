@@ -108,10 +108,15 @@ if(isset($_SESSION["cart"])){
                         <p class="text-success">Producto en Existencia</p>
                         <div class="badge badge-success"> 
                           Stock: <?php echo $p->Stock; ?>
-                        <?php else:?> </div>   
+                          </div>
+
+                        <?php else:?>                           
                         <p class="text-warning">Producto no disponible</p>
                         <?php endif; ?>
-
+                        
+                        <?php if ($p->video!=null) {   
+                        echo '<iframe width="365" height="230"'. 'src="https://www.youtube-nocookie.com/embed/'.htmlspecialchars($p->video).'?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        } ?>
                     </div>
                 </div>
                 <br><br>
