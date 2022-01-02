@@ -1,5 +1,5 @@
-# Katana
-Sistema de Tienda en Linea
+# Store
+Tienda en Linea
 
 ### Características
 
@@ -16,9 +16,3 @@ Sistema de Tienda en Linea
 - Gestion de categorias
 - Organización de productos por categorías
 - Controla los usuarios que tendran acceso al sistema de administración
-- Mucho mas
-
-### Actualizaciones
-- 2019/Apr/15: Actualizacion del front a Bootstrap 4.
-
-Link: http://evilnapsis.com/2015/10/16/katana-lite-sistema-de-tienda-en-linea/
